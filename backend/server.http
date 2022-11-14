@@ -1,0 +1,60 @@
+GET http://localhost:5012/api/user
+###
+POST http://localhost:5012/api/user/register
+Content-Type: application/json
+
+{
+    "username": "kotori123",
+    "password": "kotori123"
+}
+
+###
+POST http://localhost:5012/api/user/login
+Content-Type: application/json
+
+{
+    "username": "kotori123",
+    "password": "kotori123"
+}
+
+### test route
+GET http://localhost:5012/api/admin/
+### get list product
+GET http://localhost:5012/api/admin/products
+### pagintion
+GET http://localhost:5012/api/admin/products?page=3&limit=6
+
+### get one list product
+GET http://localhost:5012/api/admin/products/635cea856a4dd3562e49b9ac
+
+### create product
+POST http://localhost:5012/api/admin/createdproduct
+Content-Type: application/json
+
+{
+    "title": "nike shoe women 14",
+    "desc": "shoe for women",
+    "img": "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+    "categories": ["tshirt", "women"],
+    "size": ["35", "36", "37", "38" ],
+    "color": ["red", "pink", "brown", "violet"],
+    "price": 30
+}
+
+###
+PATCH  http://localhost:5012/api/admin/product/6362a93006b5fe6ed3717a00
+Content-Type: application/json
+
+{
+    "title": "nike shoe women update",
+    "desc": "shoe for women",
+    "img": "test",
+    "categories": ["tshirt", "women"],
+    "size": ["35", "36", "37", "38" ],
+    "color": ["red", "pink", "brown", "violet"],
+    "price": 30
+}
+
+###
+DELETE  http://localhost:5012/api/admin/product/635cea856a4dd3562e49b9ac
+
