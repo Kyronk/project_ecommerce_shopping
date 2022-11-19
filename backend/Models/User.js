@@ -12,6 +12,14 @@ const UserSchema = new Schema({
         require: true,
         
     },
+    email: {
+        type: String,
+        unique: true,
+        require: true
+    },
+    avatar: {
+        type: String
+    },
     firstName: {
         type: String,
         // required: true,
@@ -22,14 +30,10 @@ const UserSchema = new Schema({
     address: {
         type: String,
     },
-    email: {
-        type: String,
-        unique: true
-    },
     createdAt: {
         type: Date,
         default: Date.now,
     }
 });
 
-module.exports = mongoose.model('user', UserSchema);
+module.exports = mongoose.model('Users', UserSchema);

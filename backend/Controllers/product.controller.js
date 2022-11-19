@@ -1,4 +1,4 @@
-const Product = require("../Models/Product.js");
+const Product = require("../models/Product.js");
 
 // Method: get - get list product
 // Method get: - get list product page
@@ -9,7 +9,7 @@ const getProducts = async ( req, res) => {
     // let PAGE_SIZE = 6;
     let PAGE_SIZE = parseInt(req.query.limit) || 6;
     if (PAGE_SIZE <= 0) {
-        PAGE_SIZE = 1;
+        PAGE_SIZE = 6;
     }
 
     // get data follow page

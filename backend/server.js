@@ -1,7 +1,10 @@
-require('dotenv').config();
+// require('dotenv').config();
 const Express = require('express');
 const mongoose = require("mongoose");
 const cors = require('cors'); 
+const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
+dotenv.config();
 
 // import route
 const userRouter = require('./Routes/user.route.js');
@@ -30,8 +33,10 @@ const connectDB = async () => {
 // Start 
 connectDB();
 
+app.use(cookieParser());
 app.use(Express.json());
-app.use(cors())
+app.use(cors());
+
 app.use('/api/user', userRouter);
 app.use('/api/admin', adminRouter);
 

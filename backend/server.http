@@ -1,31 +1,60 @@
 GET http://localhost:5012/api/user
-###
+### user route
 POST http://localhost:5012/api/user/register
 Content-Type: application/json
 
 {
-    "username": "kotori123",
-    "password": "kotori123"
+    "username": "username1",
+    "password": "123abc"
 }
-
 ###
 POST http://localhost:5012/api/user/login
 Content-Type: application/json
 
 {
-    "username": "kotori123",
-    "password": "kotori123"
+    "username": "username1",
+    "password": "123abc"
 }
+###
+GET http://localhost:5012/api/user/product-list
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmZmYwNWZlZDcxZmI1MWY4OTY2MiIsInVzZXJuYW1lIjoidXNlcm5hbWUxIiwiaWF0IjoxNjY4NTAxOTcxLCJleHAiOjE2Njg1MDU1NzF9.a4Vp05rLfwksQ8ghhx48dfnXrjPtNLyXV4oMQrSp1xg
+
+
+
+
+### Admin route
+POST http://localhost:5012/api/admin/register
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+###
+POST http://localhost:5012/api/admin/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+###
+POST http://localhost:5012/api/admin/logout
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzI2MGEzOTgwNTczZTYxNjFhMjk4MiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2Njg0NzY0NTEsImV4cCI6MTY2ODQ4MDA1MX0.uj6VokQuTBh9OBV87KnX00ECM12bJRoh6YW2JorJSXk
 
 ### test route
 GET http://localhost:5012/api/admin/
 ### get list product
 GET http://localhost:5012/api/admin/products
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzI2MGEzOTgwNTczZTYxNjFhMjk4MiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2Njg1MDEzOTUsImV4cCI6MTY2ODUwNDk5NX0.XGknJBteCntaQOeB2CGC9Rggo0_IJFGdAl_1hvyWrrQ
+
+
 ### pagintion
-GET http://localhost:5012/api/admin/products?page=3&limit=6
+GET http://localhost:5012/api/admin/products?page=1&limit=2
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzI2MGEzOTgwNTczZTYxNjFhMjk4MiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2Njg1MDEzOTUsImV4cCI6MTY2ODUwNDk5NX0.XGknJBteCntaQOeB2CGC9Rggo0_IJFGdAl_1hvyWrrQ
 
 ### get one list product
-GET http://localhost:5012/api/admin/products/635cea856a4dd3562e49b9ac
+GET http://localhost:5012/api/admin/products/6364e45b91f3aeb5fa7aacce
 
 ### create product
 POST http://localhost:5012/api/admin/createdproduct

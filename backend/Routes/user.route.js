@@ -1,13 +1,22 @@
 const express = require('express');
-const router = express.Router();
+const route = express.Router();
 
-const UserController = require('../Controllers/user.controller');
+const UserController = require('../controllers/user.controller.js');
+const jwtMiddleware = require('../middleware/jwt.middleware.js');
 
+const {
+    getProducts,
+    getItemProduct,
+} = require('../Controllers/product.controller');
 // public
-router.post('/register', UserController.register);
-router.post('/login', UserController.login);
+route.post('/login', UserController.login);
+route.post('/register', UserController.register);
+route.post('/logout', jwtMiddleware.verifyToken, UserController.logout);
 
-router.get('/', (req, res) => {res.send(' user route')});
+route.get('/product-list', jwtMiddleware.verifyToken, getProducts);
 
 
-module.exports = router;
+route.get('/', (req, res) => {res.send(' user route')});
+
+
+module.exports = route;
