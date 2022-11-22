@@ -13,7 +13,7 @@ route.post('/login', UserController.login);
 route.post('/register', UserController.register);
 route.post('/logout', jwtMiddleware.verifyToken, UserController.logout);
 
-route.get('/product-list', jwtMiddleware.verifyToken, getProducts);
+route.get('/product-list', getProducts);
 
 
 route.get('/', (req, res) => {res.send(' user route')});

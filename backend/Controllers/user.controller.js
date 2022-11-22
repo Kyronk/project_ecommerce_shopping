@@ -61,7 +61,7 @@ const userController = {
                 req.body.password,
                 user.password
             );
-            if (!validPassword) return res.status(404).json("Wrong password");
+            if (!validPassword) return res.status(404).json({"mes": "Wrong password"});
             if (user && validPassword) {
                 const accessToken = userController.generateAccessToken(user);
                 const refreshToken = userController.generateRefreshToken(user);

@@ -16,8 +16,8 @@ Content-Type: application/json
     "password": "123abc"
 }
 ###
-GET http://localhost:5012/api/user/product-list
-Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmZmYwNWZlZDcxZmI1MWY4OTY2MiIsInVzZXJuYW1lIjoidXNlcm5hbWUxIiwiaWF0IjoxNjY4NTAxOTcxLCJleHAiOjE2Njg1MDU1NzF9.a4Vp05rLfwksQ8ghhx48dfnXrjPtNLyXV4oMQrSp1xg
+GET http://localhost:5012/api/user/product-list?page=1&limit=2
+# Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmZmYwNWZlZDcxZmI1MWY4OTY2MiIsInVzZXJuYW1lIjoidXNlcm5hbWUxIiwiaWF0IjoxNjY4NTAxOTcxLCJleHAiOjE2Njg1MDU1NzF9.a4Vp05rLfwksQ8ghhx48dfnXrjPtNLyXV4oMQrSp1xg
 
 
 

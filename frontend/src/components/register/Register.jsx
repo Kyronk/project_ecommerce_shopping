@@ -1,52 +1,60 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-import avatar from "../../assets/img/avatar.svg";
 
 const RegisterUser = () => {
     
     return (
         <>
-            <form>
-                <img src={avatar} alt="" />
-                <h2 className="title">Register</h2>
-                <div className="input-div one">
-                    <div className="i">
-                        <i className="fas fa-user"></i>
-                    </div>
-                    <div className="div">
-                        <input
-                            type="text"
-                            className="input"
-                            placeholder="Username"
-                        />
-                    </div>
+            <form 
+                className="form-login" 
+                // onSubmit={handleLogin}
+                >
+                <h1 className="title-login">Register</h1>
+
+                <div className="form-login_input">
+                    <input
+                        type="text"
+                        required
+                        className="form-login_input-email"
+                        // onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <span className="form-login_span"></span>
+                    <label 
+                        className="form-login_label"
+                        >Email</label>
                 </div>
-                <div className="input-div pass">
-                    <div className="i">
-                        <i className="fas fa-envelope"></i>
-                    </div>
-                    <div className="div">
-                        <input
-                            type="email"
-                            className="input"
-                            placeholder="Email"
-                        />
-                    </div>
+
+                <div className="form-login_input">
+                    <input
+                        type="text"
+                        required
+                        className="form-login_input-user"
+                        // onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <span className="form-login_span"></span>
+                    <label 
+                        className="form-login_label"
+                        >User Name</label>
                 </div>
-                <div className="input-div pass">
-                    <div className="i">
-                        <i className="fas fa-lock"></i>
-                    </div>
-                    <div className="div">
-                        <input
-                            type="password"
-                            className="input"
-                            placeholder="Password"
-                        />
-                    </div>
+
+                <div className="form-login_input">
+                    <input
+                        type="password"
+                        required
+                        className="input"
+                        // onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <span className="form-login_span"></span>
+                    <label
+                        className="form-login_label"
+                        >Password</label>
                 </div>
-                <input type="submit" className="btn" value="Register" />
+
+                <input 
+                    type="submit" 
+                    className="form-login_btn-submit" 
+                    value="Register" />
             </form>
         </>
     );
