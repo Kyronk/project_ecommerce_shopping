@@ -6,6 +6,7 @@ import LoginPage from './page/loginPage/LoginPage';
 import CartPage from './page/cartPage/CartPage';
 import Page404 from './page/page404/Page404';
 import ProductListPage from './page/productListPage/ProductListPage';
+import About from './page/about/About';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Route path="/product-list" element={<ProductListPage />} />
                     
 
+                    <Route path="/about" element={<About /> } />
                     {/* <Route path="/register" element={<Register />} /> */}
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="*" element={<Page404  />} />

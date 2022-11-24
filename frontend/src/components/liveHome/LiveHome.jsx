@@ -1,33 +1,34 @@
 import React from "react";
 
 import "./LiveHome.scss";
-import image1 from "../../assets/img/images/image1.png";
 
 const LiveHome = () => {
     return (
         <>
-            <div className="row">
-                <div className="col-2 content">
+            <div className="hero">
+                <div className="content">
+                    <h4>Hello, my name is</h4>
                     <h1>
-                        give Your workout <br /> - new style
+                        Tahmid <span>Ahmed</span>
                     </h1>
-                    <p>
-                        Lorem, ipsum dolor sit amet <br />
-                        consectetur adipisicing elit. Inventore qua s esse
-                        maiores, optio minus minima aperiam doloribus .
-                    </p>
-                    <div className="btn-home">
-                        <button href="/" className="btn">
-                            Explore Now{" "}
-                        </button>
+                    <h3>I'am a Web Developer.</h3>
+                    <div className="newslatter">
+                        <form>
+                            <input
+                                type="email"
+                                name="email"
+                                id="mail"
+                                placeholder="Enter Your Email"
+                            />
+                            <input
+                                type="submit"
+                                name="submit"
+                                value="Lets Start"
+                            />
+                        </form>
                     </div>
                 </div>
-                <div className="col-2">
-                    <img src={image1} alt="" />
-                </div>
             </div>
-
-            
         </>
     );
 };
