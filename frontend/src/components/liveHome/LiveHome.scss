@@ -1,4 +1,4 @@
-.hero{
+.live-home{
 	height: 100vh;
 	width: 100%;
 
@@ -8,34 +8,37 @@
 	background-position: center;
 }
 
-.content{
+.live-home_content{
 	position: absolute;
 	top: 50%;
 	left:8%;
 	transform: translateY(-50%);
 } 
-h1{
+
+.live-home_content h1{
 	color: white;
 	margin: 20px 0px 20px;
 	font-size: 75px;
 }
-h3{
+
+.live-home_content h3{
 	color: white;
 	font-size: 25px;
 	margin-bottom: 50px;
 }
-h4{
+.live-home_content  h4{
 	color: #fcfc;
 	letter-spacing: 2px;
 	font-size: 20px;
 }
 
-.newslatter form{
+.live-home_news-latter form{
 	width: 380px;
 	max-width: 100%;
 	position: relative;
 }
-.newslatter form input:first-child{
+
+.live-home_news-latter form input:first-child{
 	display: inline-block;
 	width: 100%;
 	padding: 14px 130px 14px 15px;
@@ -43,7 +46,9 @@ h4{
 	outline: none;
 	border-radius: 30px;
 }
-.newslatter form input:last-child{
+
+
+.live-home_news-latter form input:last-child{
 	position: absolute;
 	display: inline-block;
 	outline: none;
@@ -56,4 +61,75 @@ h4{
 	top: 6px;
 	right: 6px; 
 }
+
+
+// ===================== //@at-root
+
+
+
+
+.live-home_style_row {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.live-home_style {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.live-home_style-col {
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.live-home_style-col img {
+    width: 100%;
+}
+
+.player {
+    background-color: transparent;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+}
+
+.player:hover {
+    background-color: #e55c536d;;
+}
+
+.player h3 {
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    font-weight: 500;
+    bottom: 0;
+    /* left: 50%;
+    transform: translateY(-50%); */
+
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+    
+}
+
+
+@media(max-width: 700px) {
+    .live-home_style_row {
+        flex-direction: column;
+    }
+}
+
+
+// ==== css grid ====//
+
 
