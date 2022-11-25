@@ -19,7 +19,7 @@ const LiveHome = () => {
                         Tahmid <span>Ahmed</span>
                     </h1>
                     <h3>I'am a Web Developer.</h3>
-                    <div className="live-home_news-latter">
+                    {/* <div className="live-home_news-latter">
                         <form>
                             <input
                                 type="email"
@@ -33,7 +33,7 @@ const LiveHome = () => {
                                 value="Lets Start"
                             />
                         </form>
-                    </div>
+                    </div> */}
                 </div>
             </div>
 

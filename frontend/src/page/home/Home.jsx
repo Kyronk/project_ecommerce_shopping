@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../components/footer/Footer";
 import LiveHome from "../../components/liveHome/LiveHome";
 import Navbar from "../../components/navbar/Navbar";
 
@@ -7,7 +8,9 @@ const Home = () => {
         <div>
             <Navbar />
             <LiveHome />
-            <h2>home Component</h2>
+            {/* <h2>home Component</h2> */}
+
+            <Footer />
         </div>
     );
 };

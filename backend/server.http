@@ -15,12 +15,14 @@ Content-Type: application/json
     "username": "username1",
     "password": "123abc"
 }
+
+### view one product of list
+GET http://localhost:5012/api/user/product-item/6362ab3606b5fe6ed3717a27
+
+
 ###
 GET http://localhost:5012/api/user/product-list?page=1&limit=2
 # Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmZmYwNWZlZDcxZmI1MWY4OTY2MiIsInVzZXJuYW1lIjoidXNlcm5hbWUxIiwiaWF0IjoxNjY4NTAxOTcxLCJleHAiOjE2Njg1MDU1NzF9.a4Vp05rLfwksQ8ghhx48dfnXrjPtNLyXV4oMQrSp1xg
-
-
-
 
 ### Admin route
 POST http://localhost:5012/api/admin/register

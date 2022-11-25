@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 
 const About = () => {
@@ -13,6 +14,8 @@ const About = () => {
                     <button>home</button>
                 </NavLink>
             </div>
+
+            <Footer />
             
         </div>
     );

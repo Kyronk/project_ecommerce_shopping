@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import queryString from "query-string";
 import axios from "axios";
+import { Link, NavLink } from "react-router-dom";
 
 import "./ProductList.scss";
 
@@ -15,7 +16,7 @@ const ProductList = () => {
 
     const [filter, setFilter] = useState({
         page: 1,
-        limit: 30,
+        limit: 16,
     });
 
     const getProductList = async () => {
@@ -47,7 +48,7 @@ const ProductList = () => {
         getProductList();
     }, [filter]);
 
-    // fix lại img của product
+    // fix lại kích thước của img của product
 
     return (
         <>
@@ -72,9 +73,9 @@ const ProductList = () => {
                     })}
             </div> */}
 
-            <div className="small-container">
-                <h2 className="tittle-featured">Featured Products</h2>
-                <div className="row row-2">
+            <div className="product-list_container">
+                <h2 className="product-list_title">Featured Products</h2>
+                <div className="product-list_row row-2">
                     <h2>All Products</h2>
                     <select name="" id="">
                         <option value="">Default Shorting</option>
@@ -85,21 +86,16 @@ const ProductList = () => {
                     </select>
                 </div>
 
-                <div className="row">
+                <div className="product-list_row">
                     
                         {productList &&
                             productList.map((item, index) => {
                                 return (
-                                    <div className="col-4" key={item._id}>
-                                        <img src={item.img} alt="" />
-                                        <h4>{item.title}</h4>
-                                        {/* <div className="rating">
-                                            <i className="fa-solid fa-star"></i>
-                                            <i className="fa-solid fa-star"></i>
-                                            <i className="fa-solid fa-star"></i>
-                                            <i className="fa-regular fa-star"></i>
-                                            <i className="fa-regular fa-star"></i>
-                                        </div> */}
+                                    <div className="product-list_col-4" key={item._id}>
+                                        <NavLink to={`product-item/${item._id}`}>
+                                            <img src={item.img} alt="" />
+                                        </NavLink>
+                                        <h4 className="product_list-h4">{item.title}</h4>
                                         <p>$ {item.price}</p>
                                     </div>
                                 );
