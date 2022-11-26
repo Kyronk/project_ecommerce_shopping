@@ -19,6 +19,8 @@ function App() {
                     
                     <Route path="/product-list/product-item/:id" element={<ProductItemPage />} />
 
+                    <Route path="/cart" element={<CartPage />} />
+                    
                     <Route path="/about" element={<About /> } />
                     {/* <Route path="/register" element={<Register />} /> */}
                     <Route path="/login" element={<LoginPage />} />

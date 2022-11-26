@@ -47,10 +47,18 @@ const Navbar = () => {
                     </ul>
 
                     <div className="main">
-                        <a href="#" className="user">
-                            <i className="ri-user-fill"></i>Sign In
-                        </a>
-                        <a href="#">Register</a>
+                        <NavLink >
+                            <div className="user">
+                                <i className="ri-user-fill"></i>
+                            </div>
+                        </NavLink>
+
+                        <NavLink to="/cart">
+                            <div className="user">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
+                        </NavLink>
+                        
                         <div className="bx bx-menu" id="menu-icon"></div>
                     </div>
                 </header>

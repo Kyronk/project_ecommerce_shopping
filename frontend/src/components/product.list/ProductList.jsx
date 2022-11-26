@@ -48,30 +48,10 @@ const ProductList = () => {
         getProductList();
     }, [filter]);
 
-    // fix lại kích thước của img của product
+    // fix lại kích thước của img của product: done
 
     return (
         <>
-            {/* <div>ProductList</div>
-            <div className="row">
-                {   productList&&
-                    productList.map( (item, index) => {
-                        return(
-                            <div className="col-4" key={item._id}>
-                        <img src={item.img} alt="" />
-                        <h4>{item.title}</h4>
-                        <div className="rating">
-                            <i className="fa-solid fa-star"></i>
-                            <i className="fa-solid fa-star"></i>
-                            <i className="fa-solid fa-star"></i>
-                            <i className="fa-regular fa-star"></i>
-                            <i className="fa-regular fa-star"></i>
-                        </div>
-                        <p>$ {item.price}</p>
-                    </div>
-                        )
-                    })}
-            </div> */}
 
             <div className="product-list_container">
                 <h2 className="product-list_title">Featured Products</h2>
@@ -92,9 +72,9 @@ const ProductList = () => {
                             productList.map((item, index) => {
                                 return (
                                     <div className="product-list_col-4" key={item._id}>
-                                        <NavLink to={`product-item/${item._id}`}>
+                                        <Link to={`product-item/${item._id}`}>
                                             <img src={item.img} alt="" />
-                                        </NavLink>
+                                        </Link>
                                         <h4 className="product_list-h4">{item.title}</h4>
                                         <p>$ {item.price}</p>
                                     </div>
