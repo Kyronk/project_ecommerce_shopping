@@ -57,7 +57,7 @@ const ProductList = () => {
                 <h2 className="product-list_title">Featured Products</h2>
                 <div className="product-list_row row-2">
                     <h2>All Products</h2>
-                    <select name="" id="">
+                    <select className="" id="">
                         <option value="">Default Shorting</option>
                         <option value="">Short by price</option>
                         <option value="">Short by popularity</option>

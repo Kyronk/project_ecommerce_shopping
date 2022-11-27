@@ -3,11 +3,16 @@ import "./Product.scss";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams,Link} from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { addProduct } from "../../redux/cartSlice";
 
 const Product = () => {
 
     const [product, setProduct] = useState({})
     const {id} = useParams();
+
+    const dispatch = useDispatch();
     // console.log(id);
     
     useEffect(() => {
@@ -19,7 +24,25 @@ const Product = () => {
         const getProductItem = response.data;
         setProduct(getProductItem);
         setProduct(getProductItem)
-        console.log("item", response.data );
+        // console.log("item", response.data );
+    }
+
+    const handleAddToCart = () => {
+        // dispatch(
+        //     addProduct({
+        //             product,
+        //             quantity,
+        //             price: product.price * quantity,
+        //     })
+        // )
+        dispatch(
+            addProduct({
+                ...product,
+                // color,
+                // quantity,
+                // size,
+            })
+        )
     }
 
 
@@ -35,22 +58,32 @@ const Product = () => {
     
     
                 <div className="item-page_col-2">
-                    <p>Home / T-shirt</p>
+                    {/* <p>Home / T-shirt</p> */}
                     <h1>{product.title}</h1>
                     <h4>$ {product.price}</h4>
-                    <select name="" id="">
+
+                    {/* {product.color?.map((c) => {
+                                    return(
+                                        < option 
+                                            color={c} 
+                                            key={c}
+                                            
+                                        />)
+                            })} */}
+
+                    {/* <select className="" id="">
                         <option value="">Select</option>
                         <option value="">XXL</option>
                         <option value="">XL</option>
                         <option value="">Large</option>
                         <option value="">Medium</option>
                         <option value="">Small</option>
-                    </select>
-                    <input type="number" value="1"/>
+                    </select> */}
+                    <input type="number" />
                     <Link to="" >
-                        <button className="btn">
+                        <button className="btn" onClick={handleAddToCart}>
                             Add to cart
-                            <i class="fa-solid fa-cart-shopping" style={{color: "white"}}></i>
+                            <i className="fa-solid fa-cart-shopping" style={{color: "white"}}></i>
                         </button>
 
                     </Link>

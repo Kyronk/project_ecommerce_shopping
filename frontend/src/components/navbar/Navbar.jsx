@@ -1,9 +1,15 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
+// redux cart quantity
+import { useSelector } from "react-redux";
+
 import "./Navbar.scss";
 
 const Navbar = () => {
+
+    const quantity = useSelector((state) => state.cart.quantity);
+
     return (
         <>
             <div className="body">
@@ -25,7 +31,7 @@ const Navbar = () => {
 
                     <ul className="navbar">
                         <li>
-                            <NavLink className="active" to="/home">
+                            <NavLink  to="/home">
                                 <p>Home</p>
                             </NavLink>
                         </li>
@@ -47,17 +53,17 @@ const Navbar = () => {
                     </ul>
 
                     <div className="main">
-                        <NavLink >
-                            <div className="user">
+                        <div className="user">
+                            <NavLink to="/">
                                 <i className="ri-user-fill"></i>
-                            </div>
-                        </NavLink>
+                            </NavLink>
+                        </div>
 
-                        <NavLink to="/cart">
-                            <div className="user">
-                                <i class="fa-solid fa-cart-shopping"></i>
-                            </div>
-                        </NavLink>
+                        <div className="user">
+                            <NavLink to="/cart">
+                                <i className="fa-solid fa-cart-shopping"></i>
+                            </NavLink>
+                        </div>
                         
                         <div className="bx bx-menu" id="menu-icon"></div>
                     </div>

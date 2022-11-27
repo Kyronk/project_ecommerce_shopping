@@ -1,8 +1,12 @@
 import "./Cart.scss";
 import React, {useState} from "react";
 
+// redux
+import { useSelector } from "react-redux";
+
 const Cart = () => {
 
+    const cart = useSelector((state) => state.cart);
     
     return (
         <>
@@ -11,29 +15,29 @@ const Cart = () => {
                 <div className="project">
                     <div className="shop">
                         <div className="box">
-                            <img src="1.jpg" />
+                            {/* <img src="1.jpg" /> */}
                             <div className="content">
                                 <h3>Women Lipsticks</h3>
                                 <h4>Price: $40</h4>
                                 <p className="unit">
-                                    Quantity: <input name="" value="2" />
+                                    Quantity: <input name=""  />
                                 </p>
                                 <p className="btn-area">
                                     <i
                                         aria-hidden="true"
                                         className="fa fa-trash"
-                                    ></i>{" "}
+                                    ></i>
                                     <span className="btn2">Remove</span>
                                 </p>
                             </div>
                         </div>
                         <div className="box">
-                            <img src="2.jpg" />
+                            {/* <img src="2.jpg" /> */}
                             <div className="content">
                                 <h3>Man's Watches</h3>
                                 <h4>Price: $40</h4>
                                 <p className="unit">
-                                    Quantity: <input name="" value="1" />
+                                    Quantity: <input name="" />
                                 </p>
                                 <p className="btn-area">
                                     <i
@@ -45,12 +49,12 @@ const Cart = () => {
                             </div>
                         </div>
                         <div className="box">
-                            <img src="3.jpg" />
+                            {/* <img src="3.jpg" /> */}
                             <div className="content">
                                 <h3>Samsung Mobile</h3>
                                 <h4>Price: $250</h4>
                                 <p className="unit">
-                                    Quantity: <input name="" value="0" />
+                                    Quantity: <input name="" />
                                 </p>
                                 <p className="btn-area">
                                     <i
@@ -83,7 +87,7 @@ const Cart = () => {
                         </a>
                     </div>
                 </div>
-            </div>{" "}
+            </div>
             
         </>
     );
