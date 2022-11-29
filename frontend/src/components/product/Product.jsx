@@ -11,6 +11,7 @@ const Product = () => {
 
     const [product, setProduct] = useState({})
     const {id} = useParams();
+    const [quantity, setQuantity] = useState(1);
 
     const dispatch = useDispatch();
     // console.log(id);
@@ -23,26 +24,27 @@ const Product = () => {
         const response = await axios.get(`http://localhost:5012/api/user/product-item/${id}`);
         const getProductItem = response.data;
         setProduct(getProductItem);
-        setProduct(getProductItem)
-        // console.log("item", response.data );
+        // setProduct(getProductItem)
+        // console.log("item", typeof response.data.price );
     }
 
     const handleAddToCart = () => {
-        // dispatch(
-        //     addProduct({
-        //             product,
-        //             quantity,
-        //             price: product.price * quantity,
-        //     })
-        // )
         dispatch(
             addProduct({
-                ...product,
-                // color,
-                // quantity,
-                // size,
+                    product,
+                    quantity,
+                    price: product.price * quantity,
             })
         )
+        // dispatch(
+        //     addProduct({
+        //         ...product,
+                
+        //         color,
+        //         quantity,
+        //         size,
+        //     })
+        // )
     }
 
 

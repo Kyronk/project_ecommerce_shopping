@@ -1,14 +1,18 @@
 import React from "react";
 import Navbar from "../../components/navbar/Navbar";
+import UserProfile from "../../components/userProfile/UserProfile";
+import Footer from "../../components/footer/Footer";
 
-const userProfilePage = () => {
+const UserProfilePage = () => {
     return (
-        <div>
+        <>
             <div>
                 <Navbar />
+                <UserProfile />
+                <Footer />
             </div>
-        </div>
+        </>
     );
 };
 
-export default userProfilePage;
+export default UserProfilePage;

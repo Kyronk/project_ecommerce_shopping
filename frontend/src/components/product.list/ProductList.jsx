@@ -28,17 +28,17 @@ const ProductList = () => {
             `http://localhost:5012/api/user/product-list?${paramString}`
         );
 
-        console.log(response);
+        // console.log(response);
 
         const { product, pagination } = response.data;
-        console.log("list", product);
+        // console.log("list", product);
         const { totalPage } = pagination;
         // console.log(typeof totalPage)
         // console.log(typeof data);
         // console.log(users);
         if (response.status === 200) {
             setProductList(product);
-            console.log("ProductList", productList);
+            // console.log("ProductList", productList);
             setPagination(pagination);
             // setPageCount(totalPage);
         }

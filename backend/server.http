@@ -48,7 +48,7 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzI2MGEzOT
 GET http://localhost:5012/api/admin/
 ### get list product
 GET http://localhost:5012/api/admin/products
-Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzI2MGEzOTgwNTczZTYxNjFhMjk4MiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2Njg1MDEzOTUsImV4cCI6MTY2ODUwNDk5NX0.XGknJBteCntaQOeB2CGC9Rggo0_IJFGdAl_1hvyWrrQ
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzI2MGEzOTgwNTczZTYxNjFhMjk4MiIsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2Njk2MDcwMTUsImV4cCI6MTY2OTYxMDYxNX0.U8uM4fXwVIsnK7kHUQdIHPULdmRWG_9sxmTn4lAxtRQ
 
 
 ### pagintion
@@ -89,3 +89,20 @@ Content-Type: application/json
 ###
 DELETE  http://localhost:5012/api/admin/product/635cea856a4dd3562e49b9ac
 
+### Admin Route manager user List
+GET http://localhost:5012/api/admin/user-list?page=1&limit=2
+###
+GET http://localhost:5012/api/admin/user-profile/63734cc1c491b45e2ac5fdd2
+
+###
+
+PATCH  http://localhost:5012/api/admin/user-profile-update/63734cc1c491b45e2ac5fdd2
+Content-Type: application/json
+
+{
+    "username": "username",
+    "firstName": "M Fikri update",
+    "lastName": "Desu",
+    "email": "email@gmail.com",
+    "address": "123/4 town abc city z"
+}

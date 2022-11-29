@@ -6,8 +6,8 @@ const Footer = () => {
     return (
         <>
             <footer className="footer">
-                <div className="container">
-                    <div className="row">
+                <div className="footer_container">
+                    <div className="footer_row">
                         <div className="footer-col">
                             <h4>company</h4>
                             <ul>

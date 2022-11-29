@@ -54,7 +54,7 @@ const Navbar = () => {
 
                     <div className="main">
                         <div className="user">
-                            <NavLink to="/">
+                            <NavLink to="/user-profile">
                                 <i className="ri-user-fill"></i>
                             </NavLink>
                         </div>
