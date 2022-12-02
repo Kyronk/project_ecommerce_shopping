@@ -12,7 +12,8 @@ const {
 const {
     getAllUser,
     getUserProfile,
-    updateUser
+    updateUser,
+    deleteUser
 } = require("../controllers/user.profile.controller.js");
 
 const AdminController = require('../Controllers/admin.controller.js');
@@ -27,7 +28,7 @@ route.post('/register', AdminController.register);
 route.post('/logout', jwtMiddleware.verifyToken, AdminController.logout);
 
 // Product Router
-route.get('/products', jwtMiddleware.verifyToken, getProducts);
+route.get('/products',  getProducts);
 route.get('/products/:id', getItemProduct);
 route.post('/created-product', createProduct);
 
@@ -38,7 +39,7 @@ route.delete('/product/:id', deleteProduct);
 route.get('/user-list', getAllUser);
 route.get('/user-profile/:id', getUserProfile);
 route.patch('/user-profile-update/:id', updateUser);
-
+route.delete('/user-profile-delete/:id', deleteUser);
 
 route.get('/', (req, res) => { res.send(' Admin route') });
 

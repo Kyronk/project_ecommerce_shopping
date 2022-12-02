@@ -64,7 +64,7 @@ const UserProfile = () => {
                                         required
                                     />
                                 </div>
-                                <div className="input-box">
+                                {/* <div className="input-box">
                                     <span className="details">Password</span>
                                     <input
                                         type="text"
@@ -81,9 +81,9 @@ const UserProfile = () => {
                                         placeholder="Confirm your password"
                                         required
                                     />
-                                </div>
+                                </div> */}
                             </div>
-                            <div className="gender-details">
+                            {/* <div className="gender-details">
                                 <input type="radio" name="gender" id="dot-1" />
                                 <input type="radio" name="gender" id="dot-2" />
                                 <input type="radio" name="gender" id="dot-3" />
@@ -104,10 +104,10 @@ const UserProfile = () => {
                                         </span>
                                     </label>
                                 </div>
-                            </div>
-                            <div className="button">
+                            </div> */}
+                            {/* <div className="button">
                                 <input type="submit" value="Register" />
-                            </div>
+                            </div> */}
                         </form>
                     </div>
                 </div>

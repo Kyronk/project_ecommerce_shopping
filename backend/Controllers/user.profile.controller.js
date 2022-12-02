@@ -64,8 +64,20 @@ const updateUser = async (req, res) => {
 };
 
 
+//Method Delete - delete product by id
+
+const deleteUser = async (req, res) => {
+    try {
+        const deleteUser = await User.deleteOne({
+            _id: req.params.id
+        });
+        res.status(200).json(deleteUser);
+    } catch (error) {
+        res.status(400).json({message: error.message});
+    }
+};
 
 
 
 
-module.exports = { getAllUser, getUserProfile, updateUser };
+module.exports = { getAllUser, getUserProfile, updateUser, deleteUser };

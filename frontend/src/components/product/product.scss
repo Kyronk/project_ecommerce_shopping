@@ -92,9 +92,28 @@ input:focus {
     outline: none;
 }
 
+// .product_count-product {
+//     margin:  0 10px;
+// }
+// .product_count-product .fa-solid .fa-plus{
+//     color: black;
+// }
+
+.fa-solid  {
+    margin: 0 10px;
+}
+
+.product_quantity {
+    border: 1px solid rgba(125, 241, 96, 0.739);
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
 .simple-product .fa-solid {
     color: #29d72f;
     margin-left: 10px;
+    
 }
 
 .small-img-row {

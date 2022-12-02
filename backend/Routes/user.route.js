@@ -17,6 +17,8 @@ route.post('/logout', jwtMiddleware.verifyToken, UserController.logout);
 route.get('/product-list', getProducts);
 route.get('/product-item/:id', getItemProduct);
 
+//user profile
+
 
 route.get('/', (req, res) => {res.send(' user route')});
 
