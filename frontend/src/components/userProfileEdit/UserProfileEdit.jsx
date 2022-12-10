@@ -2,12 +2,18 @@
 import React, { useState, useEffect } from "react";
 
 import axios from "axios";
-import { useHistory, useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 
 import "../userProfile/UserProfile.scss";
+import { useSelector } from "react-redux";
 
 const UserProfileEdit = () => {
 
+    const id = useSelector((state) => state.user.login.currentUser._id);
+    // console.log('id profile', user);
+    // const id = user.id;
+
+    // console.log('id', id)
     // const [userProfile, setUserProfile] = useState({});
 
     const [firstName, setFirstName] = useState("");
@@ -16,17 +22,18 @@ const UserProfileEdit = () => {
     const [address, setAddress] = useState("");
     const [username, setUsername] = useState("");
 
+    const navigate = useNavigate();
     // const history = useHistory();
 
     useEffect(() => {
-        getUserProfile()
+        getUserProfile();
     }, [])
 
     const getUserProfile = async () => {
-        const response = await axios.get("http://localhost:5012/api/admin/user-profile/63734cc1c491b45e2ac5fdd2");
+        const response = await axios.get(`http://localhost:5012/api/admin/user-profile/${id}`);
+        console.log(response)
         const profile = response.data;
-        // setUserProfile(profile);
-        // console.log(profile);
+        console.log(profile);
         setAddress(profile.address);
         setUsername(profile.username);
         setFirstName(profile.firstName);
@@ -38,7 +45,7 @@ const UserProfileEdit = () => {
     const updateUser = async(event) => {
         event.preventDefault();
         try {
-            await axios.patch(`http://localhost:5012/api/admin/user-profile-update/63734cc1c491b45e2ac5fdd2`, {
+            await axios.patch(`http://localhost:5012/api/admin/user-profile-update/${id}`, {
                 firstName,
                 lastName,
                 username,
@@ -47,9 +54,11 @@ const UserProfileEdit = () => {
             });
             
             // toast.success('update is success')
+            // navigate(`/user-profile/${id}`)
         }catch (err) {
             console.log(err)
         }
+        navigate(`/user-profile`);
     }
 
 

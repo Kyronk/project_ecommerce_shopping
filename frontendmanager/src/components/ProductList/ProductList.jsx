@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import './ProductList.scss';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import axios from "axios";
 import queryString from "query-string";
 import { toast } from "react-toastify";
@@ -58,8 +58,13 @@ const ProductList = () => {
     }
 
     return (
-        <div className="productlist_container">
-            <div>
+        <div className="product-list_container">
+            <div className="product-list_content">
+            <Link >
+                <button
+                    className="product-list_create"
+                >Create +</button>
+            </Link>
                 <table className="styled-table">
                     <thead>
                         <tr>
@@ -87,28 +92,18 @@ const ProductList = () => {
                                         </td>
                                         <td>{item.price}</td>
                                         <td>
+                                            <Link to={`view/${item._id}`}>
+                                                <button className="btn btn-view" >View</button>
+                                            </Link>
                                             <button 
                                                 className="btn btn-delete" 
                                                 onClick={() => handleDeleteProduct(item._id)}
                                                 >Delete</button>
-                                            <Link to={`view/${item._id}`}>
-                                                <button className="btn btn-view" >View</button>
-                                            </Link>
                                         </td>
                                     </tr>
                                 )
                             })
                         }
-                        {/* <tr>
-                            <th scope="row">1</th>
-                            <td>nike gi gi do</td>
-                            <td>this is your img</td>
-                            <td>100$</td>
-                            <td>
-                                <button>xoa</button>
-                                <button>xem</button>
-                            </td>
-                        </tr> */}
                     </tbody>
                 </table>
             </div>

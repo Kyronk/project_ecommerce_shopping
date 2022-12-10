@@ -11,6 +11,7 @@ const userController = {
 
             // create new a user
             const newUser = await new User({
+                email: req.body.email,
                 username: req.body.username,
                 password: hashed,
             });
@@ -32,7 +33,7 @@ const userController = {
             },
             process.env.JWT_ACCESS_KEY,
             {
-                expiresIn: "1h",
+                expiresIn: "30d",
             }
         );
     },

@@ -17,9 +17,9 @@ const getProducts = async ( req, res) => {
     // PAGE_SIZE = parseInt(PAGE_SIZE);
 
     let skip = (page - 1) * PAGE_SIZE;
-    // console.log(skip);
+
     let productRows = await Product.countDocuments({});
-    // console.log(userRows)
+
     let totalPage = Math.ceil(productRows / PAGE_SIZE);
     let pagination = { productRows, totalPage, page, PAGE_SIZE };
 

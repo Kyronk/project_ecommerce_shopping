@@ -4,6 +4,8 @@ const route = express.Router();
 const UserController = require('../controllers/user.controller.js');
 const jwtMiddleware = require('../middleware/jwt.middleware.js');
 
+const Checkout = require('../controllers/oder.controller.js');
+
 const {
     getProducts,
     getItemProduct,
@@ -17,7 +19,11 @@ route.post('/logout', jwtMiddleware.verifyToken, UserController.logout);
 route.get('/product-list', getProducts);
 route.get('/product-item/:id', getItemProduct);
 
+//oder
+route.post('/checkout', Checkout.createOder);
+
 //user profile
+
 
 
 route.get('/', (req, res) => {res.send(' user route')});

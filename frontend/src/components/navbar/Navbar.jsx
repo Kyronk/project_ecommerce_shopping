@@ -61,7 +61,13 @@ const Navbar = () => {
 
                         <div className="user">
                             <NavLink to="/cart">
+                                <div className="count-container">
+                                    {
+                                        quantity === 0 ? "" : <span className="count">{quantity}</span>
+                                    }
+                                    
                                 <i className="fa-solid fa-cart-shopping"></i>
+                                </div>
                             </NavLink>
                         </div>
                         

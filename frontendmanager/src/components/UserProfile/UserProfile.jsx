@@ -1,39 +1,53 @@
-
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import "./UserProfile.scss";
 
 import axios from "axios";
+import { useParams, Link, NavLink } from "react-router-dom";
 
-import "./UserProfile.scss";
-import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 const UserProfile = () => {
-    
-    const id = useSelector((state) => state.user.login.currentUser._id);
-    
-    console.log("id", id)
-
-    const [userProfile, setUserProfile] = useState({});
+    const [user, setUser] = useState({});
+    const { id } = useParams();
 
     useEffect(() => {
-        getUserProfile()
-    }, [])
+        getUser();
+    }, []);
 
-    const getUserProfile = async () => {
-        const response = await axios.get(`http://localhost:5012/api/admin/user-profile/${id}`);
-        const profile = response.data;
-        setUserProfile(profile)
-        console.log(profile);
-    }
+    const getUser = async () => {
+        const response = await axios.get(
+            `http://localhost:5012/api/admin/user-profile/${id}`
+        );
+        const getDataUser = response.data;
+        // console.log("user", getDataItem);
+        setUser(getDataUser);
+
+        
+    };
+
+
+
 
     return (
+        // <>
+        //     UserProfile
+        //     <h3>{user.username}</h3>
+        //     <h4>first name : {user.firstName}</h4>
+        //     <h4>last name : {user.lastName}</h4>
+        //     <h4>email : {user.email}</h4>
+
+
+        // </>
         <>
             <div className="user-profile">
                 <div className="user-profile_container">
                     <div className="user-profile_title">
                         Profile User
-                        <NavLink to="/user-profile-edit">
-                            <button className="btn" style={{margin: "0 15px"}}>Edit</button>
+                        <NavLink to={`/user-profile-edit/${user._id}`}>
+                            <button     
+                                className="btn" 
+                                style={{margin: "0 15px"}}
+                                // idUser={user.id}
+                                >Edit</button>
                         </NavLink>
                     </div>
                     <div className="user-profile_content">
@@ -41,23 +55,23 @@ const UserProfile = () => {
                             <div className="user-details">
                                 <div className="input-box">
                                     <span className="details">First Name</span>
-                                    <p>{userProfile.firstName}</p>
+                                    <p>{user.firstName}</p>
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Last Name</span>
-                                    <p>{userProfile.lastName}</p>
+                                    <p>{user.lastName}</p>
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Username</span>
-                                    <p>{userProfile.username}</p>
+                                    <p>{user.username}</p>
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Email</span>
-                                    <p>{userProfile.email}</p>
+                                    <p>{user.email}</p>
                                 </div>
                                 <div className="input-box">
                                     <span className="details">Address</span>
-                                    <p>{userProfile.address}</p>
+                                    <p>{user.address}</p>
                                 </div>
                                 <div className="input-box">
                                     <span className="details">

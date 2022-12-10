@@ -1,14 +1,37 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import axios from "axios";
+
 
 const RegisterUser = () => {
     
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState(" ");
+    const [firstName, setFirstName] = useState(" ");
+    const [lastName, setLastName] = useState(" ");
+    const [address, setAddress] = useState(" ");
+
+
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        await axios.post("http://localhost:5012/api/user/register", {
+            email,
+            username,
+            password,
+            firstName,
+            lastName,
+            address
+        })
+    }
+
+
     return (
         <>
             <form 
                 className="form-login" 
-                // onSubmit={handleLogin}
+                onSubmit={handleRegister}
                 >
                 <h1 className="title-login">Register</h1>
 
@@ -17,7 +40,8 @@ const RegisterUser = () => {
                         type="text"
                         required
                         className="form-login_input-email"
-                        // onChange={(e) => setUsername(e.target.value)}
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
                     />
                     <span className="form-login_span"></span>
                     <label 
@@ -30,6 +54,8 @@ const RegisterUser = () => {
                         type="text"
                         required
                         className="form-login_input-user"
+                        onChange={(e) => setUsername(e.target.value)}
+                        value={username}
                         // onChange={(e) => setUsername(e.target.value)}
                     />
                     <span className="form-login_span"></span>
@@ -43,7 +69,8 @@ const RegisterUser = () => {
                         type="password"
                         required
                         className="input"
-                        // onChange={(e) => setPassword(e.target.value)}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                     <span className="form-login_span"></span>
                     <label

@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+body {
+    // background-color: rgba(19, 16, 16, 0);
+}
+
+.Login-admin_page {
+    border-radius: 10px;
+    padding: 30px 10px;
+    width: 450px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: #fff;
+    background-color: rgba(19, 16, 16, 0.15);
+}
+
+.Login-admin_page h1 {
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 4px 0;
+}
+
+.Login-admin_page p {
+    font-size: 16px;
+    margin: 15px 0px;
+}
+
+.Login-admin_page input {
+    font-size: 16px;
+    width: 100%;
+    padding: 15px 10px;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+}
+
+.Login-admin_page button {
+    display: block;
+    margin: 10px 0;
+    width: 100%;    
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all .5s;
+}
+
+.Login-admin_page button:hover {
+    border: #fff 1px solid;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.196);
+}
+

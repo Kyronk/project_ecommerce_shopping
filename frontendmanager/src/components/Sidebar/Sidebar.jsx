@@ -12,13 +12,18 @@ import { FcAbout,} from "react-icons/fc";
 
 
 const Sidebar = ({children}) => {
-    const  [isOpen, setIsOpen ] = useState(false);
+    const  [isOpen, setIsOpen ] = useState(true);
     const toggle = () => setIsOpen(!isOpen);
     const menuItem = [
         {
             path: "/home",
             name: "Dashboard",
             icon: <FaTh />,
+        },
+        {
+            path: "/oder",
+            name: "Oder",
+            icon: <FaThList/>
         },
         {
             path: "/productlist",

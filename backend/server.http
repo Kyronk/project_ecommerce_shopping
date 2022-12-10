@@ -19,6 +19,31 @@ Content-Type: application/json
 ### view one product of list
 GET http://localhost:5012/api/user/product-item/6362ab3606b5fe6ed3717a27
 
+### Check out Cart
+POST http://localhost:5012/api/user/checkout
+Content-Type: application/json
+
+{
+    "products": [
+        {
+            "_id": "12223342",
+            "title": "shoe",
+            "price": 20,
+            "quantity": 1
+        },
+        {
+            "_id": "12223343",
+            "title": "shoe",
+            "price": 20,
+            "quantity": 1
+        }
+    ],
+    "quantity": 2,
+    "total": 40,
+    "isAccept": false
+}
+
+
 
 ###
 GET http://localhost:5012/api/user/product-list?page=1&limit=2
@@ -59,7 +84,7 @@ Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzI2MGEzOT
 GET http://localhost:5012/api/admin/products/6364e45b91f3aeb5fa7aacce
 
 ### create product
-POST http://localhost:5012/api/admin/createdproduct
+POST http://localhost:5012/api/admin/createdproduct 
 Content-Type: application/json
 
 {
@@ -96,13 +121,14 @@ GET http://localhost:5012/api/admin/user-profile/63734cc1c491b45e2ac5fdd2
 
 ###
 
-PATCH  http://localhost:5012/api/admin/user-profile-update/63734cc1c491b45e2ac5fdd2
+PATCH  http://localhost:5012/api/admin/user-profile-update/6372fff05fed71fb51f89662
 Content-Type: application/json
 
 {
-    "username": "username",
+    "username": "username1",
     "firstName": "M Fikri update",
     "lastName": "Desu",
-    "email": "email@gmail.com",
+    "email": "1email@gmail.com",
     "address": "123/4 town abc city z"
 }
+

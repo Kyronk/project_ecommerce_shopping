@@ -4,13 +4,44 @@ import React, { useState } from "react";
 // redux
 import { useSelector } from "react-redux";
 
+import axios from "axios";
+
 const Cart = () => {
     const cart = useSelector((state) => state.cart);
 
-    console.log("cart", cart);
+    const list = useSelector((state) => state.cart.products);
+    const quantityInCart = useSelector((state) => state.cart.quantity);
+    // const totalCart = useSelector((state) => state.total);
+    // console.log("list", totalCart);
+
+    // const [products, setProducts] = useState([]);
+    // const [quantity, setQuantity] = useState(0);
+    // const [total, setTotal] = useState(0);
+    const isAccept = false;
+
+    // const list = cart.products;
+    // console.log(list);
+
+    // setProducts(cart.products);
+    // console.log("product", products);
+
+
+    const checkOut = async () => {
+        try {
+            const response = await axios.post("http://localhost:5012/api/user/checkout", {
+                list,
+                quantityInCart,
+                // totalCart,
+                isAccept
+            });
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     // const listCart = cart.products;
-    return (
+    return ( 
         <>
             <div className="wrapper">
                 <h1>Shopping Cart</h1>
@@ -38,23 +69,6 @@ const Cart = () => {
                                 </div>
                             ))}
 
-                        {/* <div className="box">
-                            <img src="2.jpg" />
-                            <div className="content">
-                                <h3>Man's Watches</h3>
-                                <h4>Price: $40</h4>
-                                <p className="unit">
-                                    Quantity: <input name="" />
-                                </p>
-                                <p className="btn-area">
-                                    <i
-                                        aria-hidden="true"
-                                        className="fa fa-trash"
-                                    ></i>{" "}
-                                    <span className="btn2">Remove</span>
-                                </p>
-                            </div>
-                        </div> */}
                     </div>
                     <div className="right-bar">
                         <p>
@@ -76,9 +90,12 @@ const Cart = () => {
                         <p>
                             <span>Total</span> <span>${cart.total}</span>
                         </p>
-                        <a href="#">
+                        <button 
+                            className="cart-btn-checkout"
+                            onClick={checkOut}
+                            >
                             <i className="fa fa-shopping-cart"></i>Checkout
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

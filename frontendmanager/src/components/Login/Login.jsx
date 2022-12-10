@@ -1,4 +1,5 @@
 import React from "react";
+import "./Login.scss";
 import { useRef } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
@@ -18,32 +19,39 @@ const Login = () => {
                 state: { from: location },
             });
         }
-    };
+    }; 
     return (
-        <div>
-            <h2>Quéo com tu lóc in</h2>
-            <label htmlFor="">Username</label>
-            <input
-                type="text"
-                name=""
-                id=""
-                ref={username}
-                onChange={(e) => (username.current = e.target.value)}
-            />
+        <>
+            <div className="Login-admin_page">
+                <h1>Manager Login</h1>
+                {/* <label htmlFor="">Username</label> */}
+                <p>User Name</p>
+                <input
+                    placeholder="Username"
+                    type="text"
+                    name=""
+                    id=""
+                    ref={username}
+                    onChange={(e) => (username.current = e.target.value)}
+                />
 
-            <label htmlFor="">Password</label>
-            <input
-                type="password"
-                name=""
-                id=""
-                ref={password}
-                onChange={(e) => (password.current = e.target.value)}
-            />
+                
+                {/* <label htmlFor="">Password</label> */}
+                <p>Pass word</p>
+                <input
+                    placeholder="Password"
+                    type="password"
+                    name=""
+                    id=""
+                    ref={password}
+                    onChange={(e) => (password.current = e.target.value)}
+                />
 
-            <button type="submit" onClick={onLogin}>
-                Login
-            </button>
-        </div>
+                <button type="submit" onClick={onLogin}>
+                    Login
+                </button>
+            </div>
+        </>
     );
 };
 

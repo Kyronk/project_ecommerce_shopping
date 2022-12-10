@@ -33,6 +33,7 @@ header{
 	// background: transparent;
 	padding: 28px 12%;
 	transition: all .50s ease;
+    z-index: 2;
 }
 .logo{
 	display: flex;
@@ -96,6 +97,40 @@ header{
 .main a:hover{
 	color: var(--main-color);
 }
+
+.count-container {
+    border: none;
+    border-radius: 1rem;
+    width: 3.3rem;
+    height: 3.3rem;
+    display: flex;
+    margin-right: 1rem;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.count {
+    user-select: none;
+    position: absolute;
+    background: red;
+    width: 1.3rem;
+    height: 1.3rem;
+    font-size: 8px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: .2rem;
+    right: .2rem;
+
+}
+
+.count {
+
+}
+
 #menu-icon{
 	font-size: 35px;
 	color: var(--text-color);

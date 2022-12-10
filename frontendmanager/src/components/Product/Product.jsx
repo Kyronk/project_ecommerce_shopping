@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Product.scss";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, NavLink } from "react-router-dom";
 
 const Product = () => {
     const [product, setProduct] = useState({});
@@ -18,7 +18,7 @@ const Product = () => {
         const getDataItem = response.data;
         setProduct(getDataItem);
 
-        console.log(getDataItem.color);
+        // console.log(getDataItem);
     };
 
     return (
@@ -61,7 +61,12 @@ const Product = () => {
                 </div>
 
                 <button className="btn_view btn_delete">Delete</button>
-                <button className="btn_view btn_update">Update</button>
+                
+                <NavLink to={`/product-list/edit/${product._id}`}>
+                    <button 
+                    className="btn_view btn_update"
+                    >Edit</button>
+                </NavLink>
             </div>
         </div>
     );
