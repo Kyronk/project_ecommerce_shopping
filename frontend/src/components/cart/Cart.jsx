@@ -2,17 +2,24 @@ import "./Cart.scss";
 import React, { useState } from "react";
 
 // redux
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { oderSuccess } from "../../redux/cartSlice";
+
 
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 const Cart = () => {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const cart = useSelector((state) => state.cart);
 
     const list = useSelector((state) => state.cart.products);
     const quantityInCart = useSelector((state) => state.cart.quantity);
-    // const totalCart = useSelector((state) => state.total);
-    // console.log("list", totalCart);
+    const totalCart = useSelector((state) => state.cart.total);
+    console.log("list", totalCart);
 
     // const [products, setProducts] = useState([]);
     // const [quantity, setQuantity] = useState(0);
@@ -29,11 +36,16 @@ const Cart = () => {
     const checkOut = async () => {
         try {
             const response = await axios.post("http://localhost:5012/api/user/checkout", {
-                list,
-                quantityInCart,
-                // totalCart,
+                products: list,
+                quantity: quantityInCart,
+                total: totalCart,
                 isAccept
             });
+            dispatch(
+                oderSuccess(),
+            );
+            navigate("/home");
+
 
         } catch (error) {
             console.log(error);

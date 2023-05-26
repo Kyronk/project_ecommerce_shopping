@@ -23,11 +23,18 @@ const cartSlice = createSlice({
             state.quantity -= 1;
             // xoá 1 phần tử  trong mảng với action
             // 
+        },
+
+        oderSuccess: (state, action) => {
+            state.products = [];
+            state.quantity = 0;
+            state.total = 0;
         }
+
 
         
     }
 })
 
-export const {addProduct, addProductEnd} = cartSlice.actions;
+export const {addProduct, addProductEnd, oderSuccess} = cartSlice.actions;
 export default cartSlice.reducer;

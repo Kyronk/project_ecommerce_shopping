@@ -20,15 +20,6 @@ const Navbar = () => {
                     </NavLink>
 
 
-                    {/* <NavLink href="/home">
-                        <i className="ri-home-heart-fill"></i>
-                        <span>Logo</span>
-                    </NavLink>
-
-                    <i className="ri-home-heart-fill"></i> */}
-
-
-
                     <ul className="navbar">
                         <li>
                             <NavLink  to="/home">

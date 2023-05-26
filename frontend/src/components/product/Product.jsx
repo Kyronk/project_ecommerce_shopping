@@ -52,6 +52,7 @@ const Product = () => {
         
         if(type === 'inc') {
             setQuantity(quantity + 1);
+            
         }else {
             // if (quantity === 1) return; // cach 1 
             quantity > 1 && setQuantity(quantity - 1);
